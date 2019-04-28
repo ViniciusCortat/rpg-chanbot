@@ -1,12 +1,11 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const auth = require('./auth.json')
 
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
 })
 
-client.login(auth.token)
+client.login(process.env.BOT_TOKEN)
 
 var pauta
 var game
