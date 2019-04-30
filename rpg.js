@@ -96,30 +96,30 @@ client.on('message', (mensagem) => {
 		let splitCommand = fullCommand.split(" ") 
 		let primaryCommand = splitCommand[0]
 		
-		if(primaryCommand == "itekimasu") {
+		case "itekimasu": 
 			mensagem.channel.send("Iterashai!")
-		}
-		if(primaryCommand == "tadaima") {
+			break
+		case "tadaima": 
 			mensagem.channel.send("Okaeri!")
-		}
-		if(primaryCommand == "sad") {
+			break
+		case "sad": 
 			mensagem.channel.send("https://youtu.be/7zp1TbLFPp8?t=37")
-		}
-		if(primaryCommand == "baka") {
+			break
+		case "baka": 
 			if(splitCommand[1].toUpperCase() == "VINNY") {
 				mensagem.channel.send("Vinny-nii-chan daisuki!")
 			}
 			else {
 				mensagem.channel.send(splitCommand[1].toUpperCase() + " NO BAKA!")
 			}
-		}
-		if(primaryCommand == "yaharo") {
+			break
+		case "yaharo": 
 			if(mensagem.author.username == "Vinny") {
 				mensagem.channel.send("Yaharo Vinny-nii-chan!")
 			}
 			else {
 				mensagem.channel.send("Yaharo "+ mensagem.author.username + "-senpai!")
 			}
-		}
+			break
 	}
 })
