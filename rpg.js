@@ -24,8 +24,11 @@ client.on('message', (mensagem) => {
 			case "help":
 				mensagem.channel.send("!intro\n!drive\n!trello\n!slack\n!savepauta (seguido da pauta a ser salva)\n!pauta\n!suggestion (seguido da sugestão a ser enviada)\n!yaharo\n!game (numero)\n!try (numero)")
 				break
-			case "drive": 
-				mensagem.channel.send("Projetual:\n https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc \nAdm:\n https://drive.google.com/drive/folders/0BxD_EjlgXY3DMlRCb1VKRXdVZUE")
+			case "driveProjetual": 
+				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
+				break
+			case "driveAdm": 
+				mensagem.channel.send("https://drive.google.com/drive/folders/0BxD_EjlgXY3DMlRCb1VKRXdVZUE")
 				break
 			case "trello": 
 				mensagem.channel.send("https://trello.com/rpgriopucgames/home")
