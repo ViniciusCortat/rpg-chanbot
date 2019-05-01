@@ -51,7 +51,7 @@ client.on('message', (mensagem) => {
 				}
 				break
 			case "intro": 
-				mensagem.channel.send("Yaharo! Meu nome é RPG-chan e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!\n\n!help")
+				mensagem.channel.send("Yaharo! Meu nome é RPG-chan e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!")
 				break
 			case "suggestion": 
 				client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
