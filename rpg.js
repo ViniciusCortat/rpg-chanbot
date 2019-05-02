@@ -58,7 +58,7 @@ client.on('message', (mensagem) => {
 				break
 			case "suggestion": 
 				client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
-				mensagem.channel.send("Obrigada pela sugestão!")
+				mensagem.channel.send("Arigato gozaimashita!")
 				break
 			case "yaharo": 
 				mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
@@ -91,6 +91,8 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("O jogo ainda não começou!")
 				}
 				break
+			case "disclaimer":
+				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
 			default:
 				mensagem.channel.send("Gomenasai, não entendi o que você quer. Tente pedir ajuda pelo comando !help")
 		}
