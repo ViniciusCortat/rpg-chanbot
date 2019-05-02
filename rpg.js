@@ -64,22 +64,22 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
 				break
 			case "game": 
-				if(isNaN(parseInt(splitCommand[1],10))) {
+				if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
 					mensagem.channel.send("Baka! Você esqueceu de informar o número")
 				}
 				else {
-					game = Math.floor((Math.random() * parseInt(splitCommand[1],10)) + 1)
+					game = Math.abs(Math.floor((Math.random() * parseInt(splitCommand[1],10)) + 1))
 					mensagem.channel.send("Gemu starto!")
 					gameon = 1
 				}
 				break
 			case "try": 
 				if(gameon) {
-					if(isNaN(parseInt(splitCommand[1],10))) {
+					if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
 						mensagem.channel.send("Baka! Você esqueceu de informar o número")
 						return
 					}
-					if(parseInt(splitCommand[1],10) == game) {
+					if(Math.abs(parseInt(splitCommand[1],10) == game)) {
 						mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
 						gameon = 0
 					}
