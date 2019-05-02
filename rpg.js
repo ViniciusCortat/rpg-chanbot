@@ -102,6 +102,15 @@ client.on('message', (mensagem) => {
 		let fullCommand = mensagem.content.substr(0)
 		let splitCommand = fullCommand.split(" ") 
 		let primaryCommand = splitCommand[0]
+		let i = 0
+		
+		while(splitCommand[i] != undefined) {
+			switch(splitCommand[i]) {
+				case "teste":
+					mensagem.channel.send("Funcionou!")
+					break
+			}
+		}
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
