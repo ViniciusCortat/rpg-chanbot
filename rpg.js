@@ -119,6 +119,7 @@ client.on('message', (mensagem) => {
 				if(splitCommand[1] == "sad") {
 					mensagem.channel.send("Well, u asked for it\n https://www.youtube.com/watch?v=xhfnTs0RZLs")
 				}
+				break
 			case "baka": 
 				if(splitCommand[1].toUpperCase() == "VINNY") {
 					mensagem.channel.send("Vinny-nii-chan daisuki!")
