@@ -58,6 +58,7 @@ client.on('message', (mensagem) => {
 				break
 			case "suggestion": 
 				client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
+				mensagem.channel.send("Obrigada pela sugestão!")
 				break
 			case "yaharo": 
 				mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
