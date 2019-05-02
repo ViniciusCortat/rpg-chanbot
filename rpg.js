@@ -102,8 +102,10 @@ client.on('message', (mensagem) => {
 		let fullCommand = mensagem.content.substr(0)
 		let splitCommand = fullCommand.split(" ") 
 		let primaryCommand = splitCommand[0]
-		if(mensagem.content.includes("teste")) {
-			mensagem.channel.send("Funcionou o teste!")
+		
+		
+		if(mensagem.content.includes("thanos")) {
+			mensagem.channel.send(":thanos:")
 		}
 		
 		switch(primaryCommand) {
