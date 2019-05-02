@@ -105,7 +105,7 @@ client.on('message', (mensagem) => {
 		
 		
 		if(mensagem.content.includes("thanos")) {
-			mensagem.channel.send(":thanos:")
+			mensagem.channel.send("<:thanos:520382259698597899>")
 		}
 		
 		switch(primaryCommand) {
