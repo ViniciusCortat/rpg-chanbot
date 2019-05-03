@@ -24,10 +24,6 @@ client.on('message', (mensagem) => {
 			case "help":
 				mensagem.channel.send("!intro\n!driveProj\n!driveAdm\n!trello\n!slack\n!savepauta (seguido da pauta a ser salva)\n!pauta\n!suggestion (seguido da sugestão a ser enviada)\n!yaharo\n!game (numero)\n!try (numero)\n!disclaimer")
 				break
-			case "move":
-				mensagem.author.voiceChannel.join()
-				//mensagem.channel.send("atualizado")
-				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
 				break
@@ -114,7 +110,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
-				mensagem.channel.send("Iterashai!6")
+				mensagem.channel.send("Iterashai!")
 				break
 			case "tadaima": 
 				mensagem.channel.send("Okaeri!")
