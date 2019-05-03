@@ -25,7 +25,7 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send("!intro\n!driveProj\n!driveAdm\n!trello\n!slack\n!savepauta (seguido da pauta a ser salva)\n!pauta\n!suggestion (seguido da sugestão a ser enviada)\n!yaharo\n!game (numero)\n!try (numero)\n!disclaimer")
 				break
 			case "move":
-				mensagem.member.voiceChannel.join()
+				mensagem.author.voiceChannel.join()
 				//mensagem.channel.send("atualizado")
 				break
 			case "driveProj": 
@@ -114,7 +114,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
-				mensagem.channel.send("Iterashai!5")
+				mensagem.channel.send("Iterashai!6")
 				break
 			case "tadaima": 
 				mensagem.channel.send("Okaeri!")
