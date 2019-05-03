@@ -26,7 +26,7 @@ client.on('message', (mensagem) => {
 				break
 			case "move":
 				mensagem.member.voiceChannel.join()
-				//mensagem.channel.send(splitCommand[1] + "foi movido para" + splitCommand[2])
+				//mensagem.channel.send("atualizado")
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
@@ -114,7 +114,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
-				mensagem.channel.send("Iterashai!")
+				mensagem.channel.send("Iterashai!5")
 				break
 			case "tadaima": 
 				mensagem.channel.send("Okaeri!")
