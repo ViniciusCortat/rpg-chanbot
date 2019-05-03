@@ -25,8 +25,8 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send("!intro\n!driveProj\n!driveAdm\n!trello\n!slack\n!savepauta (seguido da pauta a ser salva)\n!pauta\n!suggestion (seguido da sugestão a ser enviada)\n!yaharo\n!game (numero)\n!try (numero)\n!disclaimer")
 				break
 			case "move":
-				guild.member(splitCommand[1]).setVoiceChannel(splitCommand[2])
-				mensagem.channel.send("Funciona plz")
+				//guild.member(splitCommand[1]).setVoiceChannel(splitCommand[2])
+				mensagem.channel.send(splitCommand[1] + "foi movido para" + splitCommand[2])
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
