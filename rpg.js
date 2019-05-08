@@ -37,76 +37,76 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send("https://rpgriopucgames.slack.com/messages/C0QKLKN5V/details/")
 				break
 			case "save": 
-				//if(splitCommand[1] == undefined) {
-					//mensagem.channel.send("Qual pauta você gostaria de salvar?")
-				//}
-				//else {
+				if(splitCommand[1] == undefined) {
+					mensagem.channel.send("Qual pauta você gostaria de salvar?")
+				}
+				else {
 					pauta = mensagem.content.substr(11)
-					//mensagem.channel.send("Pauta Salva")
-				//}
+					mensagem.channel.send("Pauta Salva")
+				}
 				break
 			case "pauta": 
-				//if(pauta == undefined) {
-					//mensagem.channel.send("Não há nenhuma pauta salva.")
-				//}
-				//else {
+				if(pauta == undefined) {
+					mensagem.channel.send("Não há nenhuma pauta salva.")
+				}
+				else {
 					mensagem.channel.send(pauta)
-				//}
+				}
 				break
-			//case "intro": 
-				//mensagem.channel.send("Yaharo! Meu nome é RPG-chan e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!")
-				//break
-			//case "suggestion": 
-				//client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
-				//mensagem.channel.send("Arigato gozaimashita!")
-				//break
-			//case "yaharo": 
-				//mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
-				//break
-			//case "game": 
-				//if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
-					//mensagem.channel.send("Baka! Você esqueceu de informar o número")
-				//}
-				//else {
-					//game = Math.abs(Math.floor((Math.random() * parseInt(splitCommand[1],10)) + 1))
-					//mensagem.channel.send("Gemu starto!")
-					//gameon = 1
-				//}
-				//break
-			//case "try": 
-				//if(gameon) {
-					//if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
-						//mensagem.channel.send("Baka! Você esqueceu de informar o número")
-						//return
-					//}
-					//if(Math.abs(parseInt(splitCommand[1],10) == game)) {
-						//mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
-						//gameon = 0
-					//}
-					//else {
-						//mensagem.channel.send("Chigau!")
-					//}
-				//}
-				//else {
-					//mensagem.channel.send("O jogo ainda não começou!")
-				//}
-				//break
-			//case "disclaimer":
-				//mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
-				//break
-			//default:
-				//mensagem.channel.send("Gomenasai, não entendi o que você quer. Tente pedir ajuda pelo comando !help")
+			case "intro": 
+				mensagem.channel.send("Yaharo! Meu nome é RPG-chan e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!")
+				break
+			case "suggestion": 
+				client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
+				mensagem.channel.send("Arigato gozaimashita!")
+				break
+			case "yaharo": 
+				mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
+				break
+			case "game": 
+				if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
+					mensagem.channel.send("Baka! Você esqueceu de informar o número")
+				}
+				else {
+					game = Math.abs(Math.floor((Math.random() * parseInt(splitCommand[1],10)) + 1))
+					mensagem.channel.send("Gemu starto!")
+					gameon = 1
+				}
+				break
+			case "try": 
+				if(gameon) {
+					if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
+						mensagem.channel.send("Baka! Você esqueceu de informar o número")
+						return
+					}
+					if(Math.abs(parseInt(splitCommand[1],10) == game)) {
+						mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
+						gameon = 0
+					}
+					else {
+						mensagem.channel.send("Chigau!")
+					}
+				}
+				else {
+					mensagem.channel.send("O jogo ainda não começou!")
+				}
+				break
+			case "disclaimer":
+				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
+				break
+			default:
+				mensagem.channel.send("Gomenasai, não entendi o que você quer. Tente pedir ajuda pelo comando !help")
 		}
     }
-	/*else {
+	else {
 		let fullCommand = mensagem.content.substr(0)
 		let splitCommand = fullCommand.split(" ") 
 		let primaryCommand = splitCommand[0]
 		
 		
-		//if(mensagem.content.includes("thanos")) {
-			//mensagem.channel.send("<:thanos:520382259698597899>")
-		//}
+		if(mensagem.content.includes("thanos")) {
+			mensagem.channel.send("<:thanos:520382259698597899>")
+		}
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
@@ -145,5 +145,5 @@ client.on('message', (mensagem) => {
 				}
 				break
 		}
-	}*/
+	}
 })
