@@ -10,6 +10,7 @@ client.login(process.env.BOT_TOKEN)
 var pauta
 var game
 var gameon = 0
+var thanosCount = 0
 
 client.on('message', (mensagem) => {
     if(mensagem.author == client.user) { // Prevent bot from responding to its own messages
@@ -22,7 +23,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "help":
-				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n")
+				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!intro\n!suggestion\n!yaharo\n!game\n!try\n!disclaimer")
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
@@ -54,7 +55,7 @@ client.on('message', (mensagem) => {
 				}
 				break
 			case "intro": 
-				mensagem.channel.send("Yaharo! Meu nome é RPG-chan e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!")
+				mensagem.channel.send("Yaharo! Meu nome é Lily e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!")
 				break
 			case "suggestion": 
 				client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
@@ -105,7 +106,8 @@ client.on('message', (mensagem) => {
 		
 		
 		if(mensagem.content.includes("thanos")) {
-			mensagem.channel.send("<:thanos:520382259698597899>")
+			thanosCount++
+			mensagem.channel.send("<:thanos:520382259698597899> " + thanosCount)
 		}
 		
 		switch(primaryCommand) {
