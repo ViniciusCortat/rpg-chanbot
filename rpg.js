@@ -109,6 +109,8 @@ client.on('message', (mensagem) => {
 			thanosCount++
 			mensagem.channel.send("<:thanos:520382259698597899> " + thanosCount)
 			mensagem.react("💯")
+			let emoji = mensagem.guild.emojis.find('name',"thanos")
+			mensagem.react(emoji)
 		}
 		
 		switch(primaryCommand) {
