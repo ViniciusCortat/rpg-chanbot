@@ -108,6 +108,7 @@ client.on('message', (mensagem) => {
 		if(mensagem.content.includes("thanos")) {
 			thanosCount++
 			mensagem.channel.send("<:thanos:520382259698597899> " + thanosCount)
+			mensagem.channel.send("<:100:")
 		}
 		
 		switch(primaryCommand) {
