@@ -112,6 +112,10 @@ client.on('message', (mensagem) => {
 			//let emoji = mensagem.guild.emojis.find('name',"thanos")
 			//mensagem.react(emoji)
 		}
+		if(mensagem.content.includes("acredito") || mensagem.content.includes("believe")) {
+			mensagem.channel.send("https://www.youtube.com/watch?v=50sVthk7Vto")
+			
+		}
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
