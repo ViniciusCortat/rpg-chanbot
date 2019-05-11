@@ -95,6 +95,8 @@ client.on('message', (mensagem) => {
 			case "music":
 				const channel = mensagem.member.voiceChannel
 				channel.join()
+				.then(connection => console.log("Connected!"))
+				.catch(console.error)
 				break
 			case "disclaimer":
 				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
