@@ -109,8 +109,8 @@ client.on('message', (mensagem) => {
 			thanosCount++
 			mensagem.channel.send("<:thanos:520382259698597899> " + thanosCount)
 			//mensagem.react("💯")
-			let emoji = mensagem.guild.emojis.find('name',"thanos")
-			mensagem.react(emoji)
+			//let emoji = mensagem.guild.emojis.find('name',"thanos")
+			mensagem.react('520382259698597899')
 		}
 		if(mensagem.content.includes("believe")) {
 			mensagem.channel.send("https://www.youtube.com/watch?v=50sVthk7Vto")
