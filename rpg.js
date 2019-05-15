@@ -114,6 +114,10 @@ client.on('message', (mensagem) => {
 			mensagem.channel.send("https://www.youtube.com/watch?v=50sVthk7Vto")
 			
 		}
+		if(mensagem.content.includes("voce consegue")) {
+			mensagem.channel.send("https://www.youtube.com/watch?v=3qRHMhAZNPY")
+			
+		}
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
