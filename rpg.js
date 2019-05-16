@@ -10,7 +10,7 @@ client.login(process.env.BOT_TOKEN)
 var pauta
 var game
 var gameon = 0
-var thanosCount = 0
+var thanosCount = 11
 
 client.on('message', (mensagem) => {
     if(mensagem.author == client.user) { // Prevent bot from responding to its own messages
@@ -138,6 +138,9 @@ client.on('message', (mensagem) => {
 				if(splitCommand[1] == "sad") {
 					mensagem.channel.send("Well, u asked for it\n https://www.youtube.com/watch?v=xhfnTs0RZLs")
 				}
+				break
+			case "tururu":
+				mensagem.channel.send("tururu\n https://youtu.be/wEWF2xh5E8s?t=28")
 				break
 			case "baka": 
 				if(splitCommand[1].toUpperCase() == "VINNY") {
