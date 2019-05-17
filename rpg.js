@@ -108,7 +108,7 @@ client.on('message', (mensagem) => {
 		}
     }
 	else {
-		let fullCommand = mensagem.content.substr(0)
+		let fullCommand = mensagem.content.substr(0).toLowerCase()
 		let splitCommand = fullCommand.split(" ") 
 		let primaryCommand = splitCommand[0]
 		
