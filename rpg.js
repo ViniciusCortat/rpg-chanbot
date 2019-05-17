@@ -17,7 +17,7 @@ client.on('message', (mensagem) => {
         return
     }
 	if(mensagem.content.startsWith("!")) {
-        let fullCommand = mensagem.content.substr(1)
+        let fullCommand = mensagem.content.substr(1).toLowerCase()
 		let splitCommand = fullCommand.split(" ") 
 		let primaryCommand = splitCommand[0]
 		
