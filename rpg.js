@@ -76,16 +76,24 @@ client.on('message', (mensagem) => {
 				break
 			case "try": 
 				if(gameon) {
-					if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
+					var trygame = Math.abs(parseInt(splitCommand[1],10))
+
+					if(isNaN(trygame)) {
 						mensagem.channel.send("Baka! Você esqueceu de informar o número")
 						return
 					}
-					if(Math.abs(parseInt(splitCommand[1],10) == game)) {
+					if(trygame == game) {
 						mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
 						gameon = 0
 					}
 					else {
 						mensagem.channel.send("Chigau!")
+						if(trygame < game) {
+							mensagem.channel.send("Too low!")
+						}
+						else {
+							mensagem.channel.send("Too high!")
+						}
 					}
 				}
 				else {
