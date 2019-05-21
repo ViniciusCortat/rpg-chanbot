@@ -115,8 +115,8 @@ client.on('message', (mensagem) => {
 				for(let i = 0; i < wordattempt.length;i++) {
 					wordattempt[i] = 'H'
 				}
-				wordattempt.join('K')
-				mensagem.channel.send(wordattempt.toString())
+				//wordattempt.join('K')
+				mensagem.channel.send(wordattempt.join('K').toString())
 				
 				break
 			case "disclaimer":
