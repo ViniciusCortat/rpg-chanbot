@@ -113,9 +113,9 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send(hangy[i])
 				wordattempt = word
 				for(let i = 0; i < wordattempt.length;i++) {
-					wordattempt[i] = "I"
+					wordattempt[i] = "H"
 				}
-				wordattempt.join("")
+				wordattempt.join(" ")
 				mensagem.channel.send(wordattempt.toString())
 				
 				break
