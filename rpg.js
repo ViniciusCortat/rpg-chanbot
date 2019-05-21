@@ -110,7 +110,6 @@ client.on('message', (mensagem) => {
 				hangyman = 1
 				let i = Math.floor((Math.random()*hangy.length))
 				word = hangy[i].split('')
-				mensagem.channel.send(word)
 				wordattempt = word
 				for(let i = 0; i < wordattempt.length;i++) {
 					wordattempt[i] = 'X'
