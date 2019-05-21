@@ -13,6 +13,7 @@ var gameon = 0
 var thanosCount = 12
 var hangy = ["unity","lily","yaharo"]
 var word
+var wordattempt
 var hangyman = 0
 
 client.on('message', (mensagem) => {
@@ -109,9 +110,12 @@ client.on('message', (mensagem) => {
 				hangyman = 1
 				let i = Math.floor((Math.random()*hangy.length))
 				word = hangy[i].split('')
-				for(let i = 0;i < word.length;i++) {
-					mensagem.channel.send(word[i])
+				mensagem.channel.send(hangy[i])
+				for(let i = 0; i < word.length;i++) {
+					wordattempt.push("_"," ")
 				}
+				mensagem.channel.send(wordattempt)
+				
 				break
 			case "disclaimer":
 				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
