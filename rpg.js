@@ -114,7 +114,7 @@ client.on('message', (mensagem) => {
 				//for(let i = 0; i < word.length;i++) {
 					//wordattempt.push("_")
 				//}
-				mensagem.channel.send(wordattempt)
+				mensagem.channel.send(wordattempt[0])
 				
 				break
 			case "disclaimer":
