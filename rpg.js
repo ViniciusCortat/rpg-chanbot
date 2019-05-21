@@ -116,7 +116,7 @@ client.on('message', (mensagem) => {
 					wordattempt[i] = "I"
 				}
 				wordattempt.join("")
-				mensagem.channel.send(wordattempt.toString)
+				mensagem.channel.send(wordattempt.toString())
 				
 				break
 			case "disclaimer":
