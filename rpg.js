@@ -111,8 +111,9 @@ client.on('message', (mensagem) => {
 				let i = Math.floor((Math.random()*hangy.length))
 				word = hangy[i].split('')
 				mensagem.channel.send(hangy[i])
-				for(let i = 0; i < word.length;i++) {
-					wordattempt.push("I")
+				wordattempt = word
+				for(let i = 0; i < wordattempt.length;i++) {
+					wordattempt[i] = "I"
 				}
 				wordattempt.join("")
 				mensagem.channel.send(wordattempt)
