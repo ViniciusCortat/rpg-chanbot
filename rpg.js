@@ -13,7 +13,7 @@ var gameon = 0
 var thanosCount = 12
 var hangy = ["unity","lily","yaharo"]
 var word
-var wordattempt = ["_","_","_"]
+var wordattempt = []
 var hangyman = 0
 
 client.on('message', (mensagem) => {
@@ -111,10 +111,11 @@ client.on('message', (mensagem) => {
 				let i = Math.floor((Math.random()*hangy.length))
 				word = hangy[i].split('')
 				mensagem.channel.send(hangy[i])
-				//for(let i = 0; i < word.length;i++) {
-					//wordattempt.push("_")
-				//}
-				mensagem.channel.send(wordattempt[0])
+				for(let i = 0; i < word.length;i++) {
+					wordattempt.push("_ ")
+				}
+				wordattempt.join("")
+				mensagem.channel.send(wordattempt)
 				
 				break
 			case "disclaimer":
