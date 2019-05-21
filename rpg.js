@@ -12,7 +12,7 @@ var game
 var gameon = 0
 var thanosCount = 12
 var hangy = ["unity","lily","yaharo"]
-var word
+var word = ""
 var hangyman = 0
 
 client.on('message', (mensagem) => {
