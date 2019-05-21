@@ -108,8 +108,8 @@ client.on('message', (mensagem) => {
 			case "hangyman":
 				hangyman = 1
 				let i = Math.floor((math.random()*(hangy.length - 1), 10))
-				word = hangy[i]
-				mensagem.channel.send(word)
+				//word = hangy[i]
+				mensagem.channel.send(hangy[i])
 				break
 			case "disclaimer":
 				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
