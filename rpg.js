@@ -107,7 +107,6 @@ client.on('message', (mensagem) => {
 			//----------------------------------------------------------------------Hangyman Game--------------------------------------------------------------------------------
 			case "hangyman":
 				hangyman = 1
-				let i = 0
 				let i = Math.floor((Math.random()*(3 - 1), 10) + 0)
 				word = hangy[i]
 				mensagem.channel.send(word)
