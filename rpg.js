@@ -12,7 +12,7 @@ var game
 var gameon = 0
 var thanosCount = 12
 var hangy = ["unity","lily","yaharo"]
-var word = ""
+var word
 var hangyman = 0
 
 client.on('message', (mensagem) => {
@@ -107,7 +107,7 @@ client.on('message', (mensagem) => {
 			//----------------------------------------------------------------------Hangyman Game--------------------------------------------------------------------------------
 			case "hangyman":
 				hangyman = 1
-				let i = Math.floor((math.random()*hangy.length, 10))
+				let i = Math.floor((math.random()*(hangy.length - 1), 10))
 				word = hangy[i]
 				mensagem.channel.send(word)
 				break
