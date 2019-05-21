@@ -108,7 +108,7 @@ client.on('message', (mensagem) => {
 			case "hangyman":
 				hangyman = 1
 				let i = 0
-				//let i = Math.floor((Math.random()*(hangy.length - 1), 10) + 0)
+				let i = Math.floor((Math.random()*(3 - 1), 10) + 0)
 				word = hangy[i]
 				mensagem.channel.send(word)
 				break
