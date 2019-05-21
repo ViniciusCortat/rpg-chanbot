@@ -10,7 +10,10 @@ client.login(process.env.BOT_TOKEN)
 var pauta
 var game
 var gameon = 0
-var thanosCount = 11
+var thanosCount = 12
+var hangy = ["unity","lily","yaharo"]
+var word
+var hangyman = 0
 
 client.on('message', (mensagem) => {
     if(mensagem.author == client.user) { // Prevent bot from responding to its own messages
@@ -64,6 +67,7 @@ client.on('message', (mensagem) => {
 			case "yaharo": 
 				mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
 				break
+			//-------------------------------------------------------------------Number Game-------------------------------------------------------------------------------------
 			case "game": 
 				if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
 					mensagem.channel.send("Baka! Você esqueceu de informar o número")
@@ -99,6 +103,13 @@ client.on('message', (mensagem) => {
 				else {
 					mensagem.channel.send("O jogo ainda não começou!")
 				}
+				break
+			//----------------------------------------------------------------------Hangyman Game--------------------------------------------------------------------------------
+			case "hangyman":
+				hangyman = 1
+				let i = Math.floor((math.random()*hangy.length, 10))
+				word = hangy[i]
+				mensagem.channel.send(word)
 				break
 			case "disclaimer":
 				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
