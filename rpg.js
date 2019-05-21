@@ -106,8 +106,8 @@ client.on('message', (mensagem) => {
 				break
 			//----------------------------------------------------------------------Hangyman Game--------------------------------------------------------------------------------
 			case "hangyman":
-				//hangyman = 1
-				//let i = Math.floor((math.random()*(hangy.length - 1), 10))
+				hangyman = 1
+				let i = Math.floor((math.random()*(hangy.length - 1), 10))
 				//word = hangy[i]
 				mensagem.channel.send(0)
 				break
