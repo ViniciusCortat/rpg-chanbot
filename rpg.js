@@ -1,4 +1,5 @@
 const Discord = require('discord.js')
+const ytdl = require('ytdl-core')
 const client = new Discord.Client()
 
 client.on('ready', () => {
@@ -6,6 +7,7 @@ client.on('ready', () => {
 })
 
 client.login(process.env.BOT_TOKEN)
+const queue = new Map()
 
 var pauta
 var game
@@ -20,7 +22,9 @@ var hangyLives
 client.on('message', (mensagem) => {
     if(mensagem.author == client.user) { // Prevent bot from responding to its own messages
         return
-    }
+	}
+	const serverQueue = queue.get(mensagem.guild.id)
+
 	if(mensagem.content.startsWith("!")) {
         let fullCommand = mensagem.content.substr(1).toLowerCase()
 		let splitCommand = fullCommand.split(" ") 
@@ -153,6 +157,16 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("O jogo ainda não começou!")
 				}
 				break
+			//-------------------------------------------------------------------Music-------------------------------------------------------------------------------------------
+			case "play":
+				execute(mensagem, serverQueue)
+				break
+			case "skip":
+				skip(mensagem, serverQueue)
+				break
+			case "stop":
+				stop(mensagem, serverQueue)
+				break
 			case "disclaimer":
 				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
 				break
@@ -222,3 +236,86 @@ client.on('message', (mensagem) => {
 		}
 	}
 })
+
+async function execute(mensagem, serverQueue) {
+	const args = mensagem.content.split(' ')
+
+	const voiceChannel = mensagem.member.voiceChannel
+	if(!voiceChannel)
+		return mensagem.channel.send("Você precisa estar em um canal de voz para me ouvir!")
+	const permissions = voiceChannel.permissionsFor(mensagem.client.user)
+	if(!permissions.has('CONNECT') || !permissions.has('SPEAK'))
+		return mensagem.channel.send("Eu preciso de permissão para falar!")
+	
+	const songInfo = await ytdl.getInfo(args[1])
+	const song = {
+		title: songInfo.title,
+		url: songInfo.video_url,
+	}
+
+	if(!serverQueue) {
+		const queueConstruct = {
+			textChannel: mensagem.channel,
+			voiceChannel: voiceChannel,
+			connection: null,
+			songs: [],
+			volume: 5,
+			playing: true,
+		}
+
+		queue.set(mensagem.guild.id, queueConstruct)
+
+		queueConstruct.songs.push(song)
+
+		try {
+			var connection = await voiceChannel.join()
+			queueConstruct.connection = connection
+			play(mensagem.guild, queueConstruct.songs[0])
+		} catch(err) {
+			console.log(err)
+			queue.delete(mensagem.guild.id)
+			return mensagem.channel.send("Ocorreu um erro")
+		}
+	}
+	else {
+		serverQueue.songs.push(song)
+		console.log(serverQueue.songs)
+		return mensagem.channel.send("${song.title} foi adicionado a fila de músicas!")
+	}
+}
+
+function skip(mensagem, serverQueue) {
+	if(!mensagem.member.voiceChannel)
+		return mensagem.channel.send("Você precisa estar em um canal de voz para pular a música!")
+	if(!serverQueue)
+		return mensagem.channel.send("Não tem nenhuma música para pular!")
+	serverQueue.connection.dispatcher.end()
+}
+
+function stop(mensagem, serverQueue) {
+	if(!mensagem.member.voiceChannel)
+		return mensagem.channel.send("Você precisa estar em um canal de voz para parar a música!")
+	serverQueue.songs = []
+	serverQueue.connection.dispatcher.end()
+}
+
+function play(guild, song) {
+	const serverQueue = queue.get(guild.id)
+
+	if(!song) {
+		serverQueue.voiceChannel.leave()
+		queue.delete(guild.id)
+		return
+	}
+
+	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
+		.on('end', () => {
+			console.log("A música acabou!")
+			serverQueue.songs.shift()
+			play(guild, serverQueue.songs[0])
+		})
+		.on('error', error => {
+			console.error(error)
+		})
+	dispatcher.setVolumeLogarithmic(serverQueue.volume/ 5)
+}

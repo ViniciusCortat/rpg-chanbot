@@ -6,6 +6,7 @@
 	"author": "Vinny",
 	"dependencies": {
 		"discord.js": "11.4.2",
+		"ytdl-core": "0.29.2",
 		"winston": "^3.2.1"
 	}
 }
