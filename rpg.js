@@ -128,9 +128,7 @@ client.on('message', (mensagem) => {
 						return
 					}
 					var CountLetter = 0;
-					mensagem.channel.send(word)
 					for(let i = 0;i < word.length;i++) {
-						mensagem.channel.send(splitCommand[1])
 						if(splitCommand[1] === word[i]) {
 							wordattempt[i] = word[i].toUpperCase()
 							CountLetter++
@@ -144,6 +142,10 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("Palavra: " + wordattempt.join(' ').toString())
 					if(hangyLives ==  0) {
 						mensagem.channel.send("Acabou as vidas")
+						hangyman = 0
+					}
+					if(wordattempt === word) {
+						mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
 						hangyman = 0
 					}
 				}
