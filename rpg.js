@@ -117,14 +117,13 @@ client.on('message', (mensagem) => {
 					wordattempt[i] = 'X'
 				}
 				word = hangy[i].split('')
-				mensagem.channel.send(word.toString())
 				mensagem.channel.send("Gemu starto!")
 				mensagem.channel.send("Lives: " + hangyLives)
 				mensagem.channel.send("Palavra: " + wordattempt.join(' ').toString())
 				break
 			case "letter":
 				if(hangyman) {
-					if(splitCommand[1] == "") {
+					if(splitCommand[1] == null) {
 						mensagem.channel.send("Baka! Você esqueceu de informar a letra")
 						return
 					}
