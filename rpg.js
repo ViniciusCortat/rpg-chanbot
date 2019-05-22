@@ -144,7 +144,7 @@ client.on('message', (mensagem) => {
 						mensagem.channel.send("Acabou as vidas")
 						hangyman = 0
 					}
-					if(wordattempt == word.toUpperCase()) {
+					if(wordattempt.toString() === word.toString().toUpperCase()) {
 						mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
 						hangyman = 0
 					}
