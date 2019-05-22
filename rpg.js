@@ -112,7 +112,9 @@ client.on('message', (mensagem) => {
 				hangyLives = 5
 				let i = Math.floor((Math.random()*hangy.length))
 				word = hangy[i].split('')
+				mensagem.channel.send(word)
 				wordattempt = word
+				mensagem.channel.send(word)
 				for(let i = 0; i < wordattempt.length;i++) {
 					wordattempt[i] = 'X'
 				}
@@ -127,9 +129,9 @@ client.on('message', (mensagem) => {
 						return
 					}
 					var CountLetter = 0;
+					mensagem.channel.send(word)
 					for(let i = 0;i < word.length;i++) {
 						mensagem.channel.send(splitCommand[1])
-						mensagem.channel.send(word)
 						if(splitCommand[1] === word[i]) {
 							wordattempt[i] = word[i].toUpperCase()
 							CountLetter++
