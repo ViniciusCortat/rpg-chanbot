@@ -15,6 +15,7 @@ var hangy = ["unity","lily","yaharo"]
 var word
 var wordattempt
 var hangyman = 0
+var hangyLives
 
 client.on('message', (mensagem) => {
     if(mensagem.author == client.user) { // Prevent bot from responding to its own messages
@@ -108,14 +109,40 @@ client.on('message', (mensagem) => {
 			//----------------------------------------------------------------------Hangyman Game--------------------------------------------------------------------------------
 			case "hangyman":
 				hangyman = 1
+				hangyLives = 5
 				let i = Math.floor((Math.random()*hangy.length))
 				word = hangy[i].split('')
 				wordattempt = word
 				for(let i = 0; i < wordattempt.length;i++) {
 					wordattempt[i] = 'X'
 				}
-				mensagem.channel.send(wordattempt.join(' ').toString())
-				
+				mensagem.channel.send("Gemu starto!")
+				mensagem.channel.send("Lives: " + hangyLives)
+				mensagem.channel.send("Palavra: " + wordattempt.join(' ').toString())
+				break
+			case "letter":
+				if(hangyman) {
+					var CountLetter = 0;
+					for(let i = 0;i < word.length;i++) {
+						if(splitCommand[1] == word[i]) {
+							wordattempt[i] = word[i].toUpperCase()
+							CountLetter++
+						}
+					}
+					if(CountLetter == 0) {
+						hangyLives--
+					}
+					CountLetter = 0
+					mensagem.channel.send("Lives: " + hangyLives)
+					mensagem.channel.send("Palavra: " + wordattempt.join(' ').toString())
+					if(hangyLives ==  0) {
+						mensagem.channel.send("Acabou as vidas")
+						hangyman = 0
+					}
+				}
+				else {
+					mensagem.channel.send("O jogo ainda não começou!")
+				}
 				break
 			case "disclaimer":
 				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
