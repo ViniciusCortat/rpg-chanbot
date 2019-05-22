@@ -12,7 +12,7 @@ const queue = new Map()
 var pauta
 var game
 var gameon = 0
-var thanosCount = 35
+var thanosCount = 40
 var hangy = ["unity","lily","yaharo","thanos","owy"]
 var word
 var wordattempt
