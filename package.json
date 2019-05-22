@@ -7,7 +7,6 @@
 	"dependencies": {
 		"discord.js": "11.4.2",
 		"ytdl-core": "0.29.2",
-		"fluent-ffmpeg": "2.1.2",
 		"winston": "^3.2.1"
 	}
 }
