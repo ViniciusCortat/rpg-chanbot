@@ -28,7 +28,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "help":
-				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!intro\n!suggestion\n!yaharo\n!game\n!try\n!disclaimer")
+				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!intro\n!suggestion\n!yaharo\n!game\n!try\n!hangyman\n!letter\n!disclaimer")
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
