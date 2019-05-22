@@ -32,7 +32,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "help":
-				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!intro\n!suggestion\n!yaharo\n!game\n!try\n!hangyman\n!letter\n!disclaimer")
+				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!intro\n!suggestion\n!yaharo\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop\n!disclaimer")
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
@@ -166,6 +166,7 @@ client.on('message', (mensagem) => {
 				break
 			case "stop":
 				stop(mensagem, serverQueue)
+				mensagem.channel.send("*Anime music stops*")
 				break
 			case "disclaimer":
 				mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
@@ -271,6 +272,7 @@ async function execute(mensagem, serverQueue) {
 			var connection = await voiceChannel.join()
 			queueConstruct.connection = connection
 			play(mensagem.guild, queueConstruct.songs[0])
+			mensagem.channel.send("*Anime music starts*")
 		} catch(err) {
 			console.log(err)
 			queue.delete(mensagem.guild.id)
@@ -280,7 +282,7 @@ async function execute(mensagem, serverQueue) {
 	else {
 		serverQueue.songs.push(song)
 		console.log(serverQueue.songs)
-		return mensagem.channel.send("${song.title} foi adicionado a fila de músicas!")
+		return mensagem.channel.send("foi adicionado uma nova música a fila de músicas!")
 	}
 }
 
