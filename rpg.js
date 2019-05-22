@@ -122,7 +122,7 @@ client.on('message', (mensagem) => {
 				break
 			case "letter":
 				if(hangyman) {
-					if(isNaN(splitCommand[1])) {
+					if(isNaN(splitCommand[1].toString())) {
 						mensagem.channel.send("Baka! Você esqueceu de informar a letra")
 						return
 					}
