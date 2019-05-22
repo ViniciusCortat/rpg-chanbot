@@ -10,8 +10,8 @@ client.login(process.env.BOT_TOKEN)
 var pauta
 var game
 var gameon = 0
-var thanosCount = 12
-var hangy = ["unity","lily","yaharo"]
+var thanosCount = 30
+var hangy = ["unity","lily","yaharo","thanos","owy"]
 var word
 var wordattempt
 var hangyman = 0
@@ -109,7 +109,7 @@ client.on('message', (mensagem) => {
 			//----------------------------------------------------------------------Hangyman Game--------------------------------------------------------------------------------
 			case "hangyman":
 				hangyman = 1
-				hangyLives = 5
+				hangyLives = 7
 				let i = Math.floor((Math.random()*hangy.length))
 				word = hangy[i].split('')
 				wordattempt = word
