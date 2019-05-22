@@ -122,9 +122,13 @@ client.on('message', (mensagem) => {
 				break
 			case "letter":
 				if(hangyman) {
+					if(isNaN(splitCommand[1])) {
+						mensagem.channel.send("Baka! Você esqueceu de informar a letra")
+						return
+					}
 					var CountLetter = 0;
 					for(let i = 0;i < word.length;i++) {
-						if(splitCommand[1] == word[i]) {
+						if(splitCommand[1] === word[i]) {
 							wordattempt[i] = word[i].toUpperCase()
 							CountLetter++
 						}
