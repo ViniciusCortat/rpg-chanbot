@@ -128,6 +128,7 @@ client.on('message', (mensagem) => {
 					}
 					var CountLetter = 0;
 					for(let i = 0;i < word.length;i++) {
+						mensagem.channel.send(splitCommand[1])
 						if(splitCommand[1] === word[i]) {
 							wordattempt[i] = word[i].toUpperCase()
 							CountLetter++
