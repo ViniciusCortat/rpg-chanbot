@@ -116,6 +116,7 @@ client.on('message', (mensagem) => {
 				for(let i = 0; i < wordattempt.length;i++) {
 					wordattempt[i] = 'X'
 				}
+				word = hangy[i].split('')
 				mensagem.channel.send(word.toString())
 				mensagem.channel.send("Gemu starto!")
 				mensagem.channel.send("Lives: " + hangyLives)
