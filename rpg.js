@@ -202,7 +202,7 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send("Okaeri!")
 				break
 			case "sad":
-				mensagem.content = "something https://www.youtube.com/watch?v=7zp1TbLFPp8&feature=youtu.be&t=37"
+				mensagem.content = "something https://www.youtube.com/watch?v=wEWF2xh5E8s&feature="
 				mensagem.channel.send("Don't be sad")
 				execute(mensagem.serverQueue)
 				break
@@ -221,7 +221,7 @@ client.on('message', (mensagem) => {
 				}
 				break
 			case "tururu":
-				mensagem.content = "something https://www.youtube.com/watch?v=wEWF2xh5E8s&feature=youtu.be&t=28"
+				mensagem.content = "something https://www.youtube.com/watch?v=wEWF2xh5E8s&feature="
 				mensagem.channel.send("tururu")
 				execute(mensagem,serverQueue)
 				break
