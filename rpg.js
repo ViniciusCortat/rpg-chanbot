@@ -211,7 +211,9 @@ client.on('message', (mensagem) => {
 				break
 			case "extremely":
 				if(splitCommand[1] == "sad") {
-					mensagem.channel.send("Well, u asked for it\n https://www.youtube.com/watch?v=xhfnTs0RZLs")
+					mensagem.content = "something https://www.youtube.com/watch?v=xhfnTs0RZLs"
+					execute(mensagem,serverQueue)
+					//mensagem.channel.send("Well, u asked for it\n https://www.youtube.com/watch?v=xhfnTs0RZLs")
 				}
 				break
 			case "tururu":
@@ -281,7 +283,7 @@ async function execute(mensagem, serverQueue) {
 	else {
 		serverQueue.songs.push(song)
 		console.log(serverQueue.songs)
-		return mensagem.channel.send("foi adicionado uma nova música a fila de músicas!")
+		return mensagem.channel.send("Foi adicionado uma nova música a fila de músicas!")
 	}
 }
 
