@@ -201,23 +201,29 @@ client.on('message', (mensagem) => {
 			case "tadaima": 
 				mensagem.channel.send("Okaeri!")
 				break
-			case "sad": 
-				mensagem.channel.send("Don't be sad\n https://youtu.be/7zp1TbLFPp8?t=37")
+			case "sad":
+				mensagem.content = "something https://www.youtube.com/watch?v=7zp1TbLFPp8&feature=youtu.be&t=37"
+				mensagem.channel.send("Don't be sad")
+				execute(mensagem.serverQueue)
 				break
 			case "really":
 				if(splitCommand[1] == "sad") {
-					mensagem.channel.send("Its not too late to be happy\n https://www.youtube.com/watch?v=XAIKmpFpTh8")
+					mensagem.content = "something https://www.youtube.com/watch?v=XAIKmpFpTh8"
+					mensagem.channel.send("Its not too late to be happy")
+					execute(mensagem,serverQueue)
 				}
 				break
 			case "extremely":
 				if(splitCommand[1] == "sad") {
 					mensagem.content = "something https://www.youtube.com/watch?v=xhfnTs0RZLs"
+					mensagem.channel.send("Well, u asked for it")
 					execute(mensagem,serverQueue)
-					//mensagem.channel.send("Well, u asked for it\n https://www.youtube.com/watch?v=xhfnTs0RZLs")
 				}
 				break
 			case "tururu":
-				mensagem.channel.send("tururu\n https://youtu.be/wEWF2xh5E8s?t=28")
+				mensagem.content = "something https://www.youtube.com/watch?v=wEWF2xh5E8s&feature=youtu.be&t=28"
+				mensagem.channel.send("tururu")
+				execute(mensagem,serverQueue)
 				break
 			case "baka": 
 				if(splitCommand[1].toUpperCase() == "VINNY") {
