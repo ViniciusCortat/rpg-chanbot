@@ -204,7 +204,7 @@ client.on('message', (mensagem) => {
 			case "sad":
 				mensagem.content = "something https://www.youtube.com/watch?v=7zp1TbLFPp8"
 				mensagem.channel.send("Don't be sad")
-				execute(mensagem.serverQueue)
+				execute(mensagem,serverQueue)
 				break
 			case "really":
 				if(splitCommand[1] == "sad") {
