@@ -13,7 +13,7 @@ var pauta
 var game
 var gameon = 0
 var thanosCount = 40
-var hangy = ["unity","lily","yaharo","thanos","owy"]
+var hangy = ["unity","lily","yaharo","thanos","owy","irezumi","tururu"]
 var word
 var wordattempt
 var hangyman = 0
