@@ -203,27 +203,31 @@ client.on('message', (mensagem) => {
 				break
 			case "sad":
 				mensagem.content = "something https://www.youtube.com/watch?v=7zp1TbLFPp8"
-				mensagem.channel.send("Don't be sad")
-				execute(mensagem,serverQueue)
+				mensagem.channel.send("Don't be sad\n https://www.youtube.com/watch?v=7zp1TbLFPp8")
+				if(mensagem.member.voiceChannel)
+					execute(mensagem,serverQueue)
 				break
 			case "really":
 				if(splitCommand[1] == "sad") {
 					mensagem.content = "something https://www.youtube.com/watch?v=XAIKmpFpTh8"
-					mensagem.channel.send("Its not too late to be happy")
-					execute(mensagem,serverQueue)
+					mensagem.channel.send("Its not too late to be happy\n https://www.youtube.com/watch?v=XAIKmpFpTh8")
+					if(mensagem.member.voiceChannel)
+						execute(mensagem,serverQueue)
 				}
 				break
 			case "extremely":
 				if(splitCommand[1] == "sad") {
 					mensagem.content = "something https://www.youtube.com/watch?v=xhfnTs0RZLs"
-					mensagem.channel.send("Well, u asked for it")
-					execute(mensagem,serverQueue)
+					mensagem.channel.send("Well, u asked for it\n https://www.youtube.com/watch?v=xhfnTs0RZLs")
+					if(mensagem.member.voiceChannel)
+						execute(mensagem,serverQueue)
 				}
 				break
 			case "tururu":
 				mensagem.content = "something https://www.youtube.com/watch?v=wEWF2xh5E8s"
-				mensagem.channel.send("tururu")
-				execute(mensagem,serverQueue)
+				mensagem.channel.send("tururu\n  https://www.youtube.com/watch?v=wEWF2xh5E8s")
+				if(mensagem.member.voiceChannel)
+					execute(mensagem,serverQueue)
 				break
 			case "baka": 
 				if(splitCommand[1].toUpperCase() == "VINNY") {
