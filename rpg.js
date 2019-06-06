@@ -248,7 +248,7 @@ client.on('message', (mensagem) => {
 			case "lily":
 				mensagem.channel.send("Haaaaai!")
 				break
-			case "attck!":
+			case "attack!":
 				mensagem.channel.send("Raaawwwrr!")
 				break
 		}
