@@ -12,7 +12,7 @@ const queue = new Map()
 var pauta
 var game
 var gameon = 0
-var thanosCount = 40
+var thanosCount = 45
 var hangy = ["unity","lily","yaharo","thanos","owy","irezumi","tururu"]
 var word
 var wordattempt
@@ -244,6 +244,12 @@ client.on('message', (mensagem) => {
 				else {
 					mensagem.channel.send("Yaharo "+ mensagem.author.username + "-senpai!")
 				}
+				break
+			case "lily":
+				mensagem.channel.send("Haaaaai!")
+				break
+			case "attck!":
+				mensagem.channel.send("Raaawwwrr!")
 				break
 		}
 	}
