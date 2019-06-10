@@ -32,7 +32,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "help":
-				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!intro\n!suggestion\n!yaharo\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop\n!disclaimer")
+				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop")
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
@@ -63,16 +63,16 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send(pauta)
 				}
 				break
-			case "intro": 
+			//case "intro": 
 				//mensagem.channel.send("Yaharo! Meu nome é Lily e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!")
-				break
-			case "suggestion": 
-				client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
+				//break
+			//case "suggestion": 
+				//client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
 				//mensagem.channel.send("Arigato gozaimashita!")
-				break
-			case "yaharo": 
+				//break
+			//case "yaharo": 
 				//mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
-				break
+				//break
 			//-------------------------------------------------------------------Number Game-------------------------------------------------------------------------------------
 			case "game": 
 				if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
@@ -167,9 +167,9 @@ client.on('message', (mensagem) => {
 			case "stop":
 				stop(mensagem, serverQueue)
 				break
-			case "disclaimer":
+			//case "disclaimer":
 				//mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
-				break
+				//break
 			default:
 				//mensagem.channel.send("Gomenasai, não entendi o que você quer. Tente pedir ajuda pelo comando !help")
 		}
