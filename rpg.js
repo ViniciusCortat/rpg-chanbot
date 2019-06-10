@@ -94,20 +94,21 @@ client.on('message', (mensagem) => {
 					}
 					if(trygame == game) {
 						//mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
+						mensagem.channel.send(mensagem.author.username + " Acertou!")
 						gameon = 0
 					}
 					else {
 						//mensagem.channel.send("Chigau!")
 						if(trygame < game) {
-							//mensagem.channel.send("Too low!")
+							mensagem.channel.send("Too low!")
 						}
 						else {
-							//mensagem.channel.send("Too high!")
+							mensagem.channel.send("Too high!")
 						}
 					}
 				}
 				else {
-					//mensagem.channel.send("O jogo ainda não começou!")
+					mensagem.channel.send("O jogo ainda não começou!")
 				}
 				break
 			//----------------------------------------------------------------------Hangyman Game--------------------------------------------------------------------------------
@@ -150,6 +151,7 @@ client.on('message', (mensagem) => {
 					}
 					if(wordattempt.toString() === word.toString().toUpperCase()) {
 						//mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
+						mensagem.channel.send(mensagem.author.username + " Acertou!")
 						hangyman = 0
 					}
 				}
