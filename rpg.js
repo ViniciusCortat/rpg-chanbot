@@ -9,10 +9,10 @@ client.on('ready', () => {
 client.login(process.env.BOT_TOKEN)
 const queue = new Map()
 
-var pauta
+var pauta = {}
 var game
 var gameon = 0
-var thanosCount = 45
+var thanosCount = 46
 var hangy = ["unity","thanos","owy","irezumi","tururu","slackbot","quarins"]
 var word
 var wordattempt
@@ -51,12 +51,12 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("Qual pauta você gostaria de salvar?")
 				}
 				else {
-					pauta = mensagem.content.substr(11)
+					pauta[mensagem.channel] = mensagem.content.substr(11)
 					mensagem.channel.send("Pauta Salva")
 				}
 				break
 			case "pauta": 
-				if(pauta == undefined) {
+				if(pauta[mensagem.channel] == undefined) {
 					mensagem.channel.send("Não há nenhuma pauta salva.")
 				}
 				else {
