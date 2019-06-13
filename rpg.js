@@ -60,7 +60,7 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("Não há nenhuma pauta salva.")
 				}
 				else {
-					mensagem.channel.send(pauta)
+					mensagem.channel.send(pauta[mensagem.channel])
 				}
 				break
 			//case "intro": 
