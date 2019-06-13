@@ -51,7 +51,7 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("Qual pauta você gostaria de salvar?")
 				}
 				else {
-					pauta[mensagem.channel.name] = mensagem.content.substr(11)
+					pauta[mensagem.channel.name] = mensagem.content.substr(6)
 					mensagem.channel.send("Pauta Salva")
 				}
 				break
