@@ -51,16 +51,16 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("Qual pauta você gostaria de salvar?")
 				}
 				else {
-					pauta[mensagem.channel] = mensagem.content.substr(11)
+					pauta[mensagem.channel.name] = mensagem.content.substr(11)
 					mensagem.channel.send("Pauta Salva")
 				}
 				break
 			case "pauta": 
-				if(pauta[mensagem.channel] == undefined) {
+				if(pauta[mensagem.channel.name] == undefined) {
 					mensagem.channel.send("Não há nenhuma pauta salva.")
 				}
 				else {
-					mensagem.channel.send("Mensagem salva: " + pauta[mensagem.channel])
+					mensagem.channel.send(pauta[mensagem.channel.name])
 				}
 				break
 			//case "intro": 
