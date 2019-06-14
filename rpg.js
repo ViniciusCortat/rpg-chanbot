@@ -189,7 +189,7 @@ client.on('message', (mensagem) => {
 
 			//senão, aleatoriza
 			if(numeroEspecificado === -1){
-				numeroEspecificado = GenerateRandomQt(2, 0.05);
+				numeroEspecificado = GenerateRandomQt(2, 0.5);
 			}
 
 			mensagem.channel.send(GetRandomMembers(mensagem, numeroEspecificado));
