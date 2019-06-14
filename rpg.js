@@ -198,6 +198,22 @@ client.on('message', (mensagem) => {
 		if(mensagem.content.toLowerCase().includes("rola um rpg")){
 			mensagem.channel.send(GetRandomMember(mensagem));
 		}
+		if(mensagem.content.toLowerCase().includes("rola um ship")){
+			var numeroEspecificado = -1;
+
+			//verifica se o número de envolvidos no ship foi especificado
+			for(i = 0; i < splitCommand.length; i++){
+				if(!isNaN(splitCommand[i])){ //checa se é um número
+					var numeroEspecificado = parseInt(splitCommand[i]);
+				}
+			}
+
+			if(numeroEspecificado == -1){
+				numeroEspecificado = GenerateRandomQt(2, 0.05);
+			}
+
+			mensagem.channel.send(GetRandomMembers(mensagem, numeroEspecificado));
+		}
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
@@ -348,3 +364,36 @@ function play(guild, song) {
 function GetRandomMember(mensagem){
 	return mensagem.guild.members.random().displayName;
 }
+
+function GetRandomMembers(mensagem, n){
+	var memberList = [];
+	var ret = "";
+
+	//sorteia membros
+	for(i = 0; i < n; i++){
+		var curMember = GetRandomMember();
+
+		//garante que não haja repetições
+		while(memberList.includes(curMember)){
+			curMember = GetRandomMember(mensagem);
+		} 
+
+		memberList.push(curMember);
+	}
+
+	//monta string
+	ret = memberList[0];
+	for(i = 1; i < memberList.length; i++){
+		ret = ret + " ❤ " + memberList[i];
+	}
+
+	return ret;
+}
+
+function GenerateRandomQt(startnum, chanceToIncrease){
+	if(Math.random() <= chanceToIncrease) return GenerateRandomQt(startnum+1, chanceToIncrease);
+	else return startnum;
+}
+
+
+
