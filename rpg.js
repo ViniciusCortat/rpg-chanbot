@@ -199,25 +199,21 @@ client.on('message', (mensagem) => {
 			mensagem.channel.send(GetRandomMember(mensagem));
 		}
 		if(mensagem.content.toLowerCase().includes("rola um ship")){
-			mensagem.channel.send("Entendi o comando");
 			var numeroEspecificado = -1;
 
 			//verifica se o número de envolvidos foi especificado
-			mensagem.channel.send("Vendo se você especificou quantas pessoas eu boto");
 			for(i = 0; i < splitCommand.length; i++){
 				if(!isNaN(splitCommand[i])){ //checa se é um número
 					var numeroEspecificado = parseInt(splitCommand[i]);
-					mensagem.channel.send("Você pediu " + numeroEspecificado + " pessoas");
 					break;
 				}
 			}
 
+			//senão, aleatoriza
 			if(numeroEspecificado === -1){
-				mensagem.channel.send("Aparentemente não, então decidindo quantas pessoas eu boto");
 				numeroEspecificado = GenerateRandomQt(2, 0.05);
 			}
 
-			mensagem.channel.send("Decidindo quais pessoas eu boto");
 			mensagem.channel.send(GetRandomMembers(mensagem, numeroEspecificado));
 		}
 		
@@ -399,8 +395,8 @@ function GetRandomMembers(mensagem, n){
 }
 
 function GenerateRandomQt(startnum, chanceToIncrease){
-	if(Math.random() <= chanceToIncrease) return GenerateRandomQt(startnum+1, chanceToIncrease);
-	else return startnum;
+	/*if(Math.random() <= chanceToIncrease) return GenerateRandomQt(startnum+1, chanceToIncrease);
+	else*/ return startnum;
 }
 
 
