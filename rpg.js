@@ -199,6 +199,7 @@ client.on('message', (mensagem) => {
 			mensagem.channel.send(GetRandomMember(mensagem));
 		}
 		if(mensagem.content.toLowerCase().includes("rola um ship")){
+			/*
 			var numeroEspecificado = -1;
 
 			//verifica se o número de envolvidos foi especificado
@@ -215,6 +216,8 @@ client.on('message', (mensagem) => {
 			}
 
 			mensagem.channel.send(GetRandomMembers(mensagem, numeroEspecificado));
+			*/
+			mensagem.channel.send("teste");
 		}
 		
 		switch(primaryCommand) {
