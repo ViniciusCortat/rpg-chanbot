@@ -220,7 +220,6 @@ client.on('message', (mensagem) => {
 			mensagem.channel.send("Decidindo quais pessoas eu boto");
 			mensagem.channel.send(GetRandomMembers(mensagem, numeroEspecificado));
 		}
-		else mensagem.channel.send("teste");
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
@@ -381,11 +380,13 @@ function GetRandomMembers(mensagem, n){
 		var curMember = GetRandomMember();
 
 		//garante que não haja repetições
-		while(memberList.includes(curMember)){
+		var tries = 0;
+		while(memberList.includes(curMember) && tries <= 10){
 			curMember = GetRandomMember(mensagem);
+			tries++;
 		} 
 
-		memberList.push(curMember);
+		if(tries < 10) memberList.push(curMember);
 	}
 
 	//monta string
