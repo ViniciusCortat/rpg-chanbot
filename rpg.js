@@ -1,6 +1,14 @@
 const Discord = require('discord.js')
 const ytdl = require('ytdl-core')
+const {Client} = require('pg')
 const client = new Discord.Client()
+
+const db = new Client({
+	connectionString: process.env.DATABASE_URL,
+	ssl: true,
+})
+
+db.connect();
 
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
