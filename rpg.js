@@ -193,8 +193,6 @@ client.on('message', (mensagem) => {
 			}
 
 			mensagem.channel.send(GetRandomMembers(mensagem, numeroEspecificado));
-			
-			mensagem.channel.send("teste");
 		}
 		
 		switch(primaryCommand) {
@@ -347,8 +345,8 @@ function GetRandomMembers(mensagem, n){
 }
 
 function GenerateRandomQt(startnum, chanceToIncrease){
-	/*if(Math.random() <= chanceToIncrease) return GenerateRandomQt(startnum+1, chanceToIncrease);
-	else*/ return startnum;
+	if(Math.random() <= chanceToIncrease) return GenerateRandomQt(startnum+1, chanceToIncrease);
+	else return startnum;
 }
 
 
