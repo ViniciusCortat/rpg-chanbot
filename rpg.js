@@ -260,10 +260,6 @@ client.on('message', (mensagem) => {
 	}
 })
 
-async function GetRandomMember(mensagem){
-	return mensagem.guild.members.random().displayName;
-}
-
 async function execute(mensagem, serverQueue) {
 	const args = mensagem.content.split(' ')
 
@@ -347,4 +343,8 @@ function play(guild, song) {
 			console.error(error)
 		})
 	dispatcher.setVolumeLogarithmic(serverQueue.volume/ 5)
+}
+
+function GetRandomMember(mensagem){
+	return mensagem.guild.members.random().displayName;
 }
