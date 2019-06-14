@@ -63,24 +63,14 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send(pauta[mensagem.channel.name])
 				}
 				break
-			//case "intro": 
-				//mensagem.channel.send("Yaharo! Meu nome é Lily e eu sou a Bot da RPG, espero que possamos trabalhar e vivenciar momentos infinitos juntos!")
-				//break
-			//case "suggestion": 
-				//client.users.get("267749503635816462").send(mensagem.content.substr(12) + "\n\nEnviado por " + mensagem.author.username + "\n----------------------------------")
-				//mensagem.channel.send("Arigato gozaimashita!")
-				//break
-			//case "yaharo": 
-				//mensagem.channel.send("https://myanimelist.net/anime/14813/Yahari_Ore_no_Seishun_Love_Comedy_wa_Machigatteiru")
-				//break
 			//-------------------------------------------------------------------Number Game-------------------------------------------------------------------------------------
 			case "game": 
 				if(Math.abs(isNaN(parseInt(splitCommand[1],10)))) {
-					//mensagem.channel.send("Baka! Você esqueceu de informar o número")
+					mensagem.channel.send("Inform number!")
 				}
 				else {
 					game = Math.abs(Math.floor((Math.random() * parseInt(splitCommand[1],10)) + 1))
-					//mensagem.channel.send("Gemu starto!")
+					mensagem.channel.send("Start!")
 					gameon = 1
 				}
 				break
@@ -89,16 +79,15 @@ client.on('message', (mensagem) => {
 					var trygame = Math.abs(parseInt(splitCommand[1],10))
 
 					if(isNaN(trygame)) {
-						//mensagem.channel.send("Baka! Você esqueceu de informar o número")
+						mensagem.channel.send("Inform number!")
 						return
 					}
 					if(trygame == game) {
-						//mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
 						mensagem.channel.send(mensagem.author.username + " Acertou!")
 						gameon = 0
 					}
 					else {
-						//mensagem.channel.send("Chigau!")
+						mensagem.channel.send("Wrong!")
 						if(trygame < game) {
 							mensagem.channel.send("Too low!")
 						}
@@ -122,14 +111,14 @@ client.on('message', (mensagem) => {
 					wordattempt[i] = 'X'
 				}
 				word = hangy[i].split('')
-				//mensagem.channel.send("Gemu starto!")
+				mensagem.channel.send("Start!")
 				mensagem.channel.send("Lives: " + hangyLives)
 				mensagem.channel.send("Palavra: " + wordattempt.join(' ').toString())
 				break
 			case "letter":
 				if(hangyman) {
 					if(splitCommand[1] == null) {
-						//mensagem.channel.send("Baka! Você esqueceu de informar a letra")
+						mensagem.channel.send("Inform letter!")
 						return
 					}
 					var CountLetter = 0;
@@ -146,11 +135,10 @@ client.on('message', (mensagem) => {
 					mensagem.channel.send("Lives: " + hangyLives)
 					mensagem.channel.send("Palavra: " + wordattempt.join(' ').toString())
 					if(hangyLives ==  0) {
-						//mensagem.channel.send("Acabou as vidas")
+						mensagem.channel.send("You Died")
 						hangyman = 0
 					}
 					if(wordattempt.toString() === word.toString().toUpperCase()) {
-						//mensagem.channel.send("Yata, " + mensagem.author.username + " Acertou!")
 						mensagem.channel.send(mensagem.author.username + " Acertou!")
 						hangyman = 0
 					}
@@ -169,11 +157,8 @@ client.on('message', (mensagem) => {
 			case "stop":
 				stop(mensagem, serverQueue)
 				break
-			//case "disclaimer":
-				//mensagem.channel.send("Eu fui feita pelo Vinny e ainda estou em desenvolvimento, se tiver alguma duvida sobre meu funcionamento e o comando !help nao estiver ajudando, fale com ele pelo !suggestion para me ajudar a ser mais intuitiva e user-friendly!")
-				//break
 			default:
-				//mensagem.channel.send("Gomenasai, não entendi o que você quer. Tente pedir ajuda pelo comando !help")
+				mensagem.channel.send("Invalid command, for further assistance consult !help")
 		}
     }
 	else {
@@ -186,14 +171,6 @@ client.on('message', (mensagem) => {
 			thanosCount++
 			mensagem.channel.send("<:thanos:520382259698597899> " + thanosCount)
 			mensagem.react('520382259698597899')
-		}
-		if(mensagem.content.includes("believe")) {
-			//mensagem.channel.send("https://www.youtube.com/watch?v=50sVthk7Vto")
-			
-		}
-		if(mensagem.content.includes("voce consegue")) {
-			//mensagem.channel.send("https://www.youtube.com/watch?v=3qRHMhAZNPY")
-			
 		}
 		if(mensagem.content.toLowerCase().includes("rola um rpg")){
 			mensagem.channel.send(GetRandomMember(mensagem));
@@ -221,12 +198,6 @@ client.on('message', (mensagem) => {
 		}
 		
 		switch(primaryCommand) {
-			case "itekimasu": 
-				//mensagem.channel.send("Iterashai!")
-				break
-			case "tadaima": 
-				//mensagem.channel.send("Okaeri!")
-				break
 			case "sad":
 				mensagem.content = "something https://www.youtube.com/watch?v=7zp1TbLFPp8"
 				mensagem.channel.send("Don't be sad\n https://www.youtube.com/watch?v=7zp1TbLFPp8")
@@ -254,28 +225,6 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send("tururu\n  https://www.youtube.com/watch?v=wEWF2xh5E8s")
 				if(mensagem.member.voiceChannel)
 					execute(mensagem,serverQueue)
-				break
-			case "baka": 
-				if(splitCommand[1].toUpperCase() == "VINNY") {
-					//mensagem.channel.send("Vinny-nii-chan daisuki!")
-				}
-				else {
-					//mensagem.channel.send(splitCommand[1].toUpperCase() + " NO BAKA!")
-				}
-				break
-			case "yaharo": 
-				if(mensagem.author.username == "Vinny") {
-					//mensagem.channel.send("Yaharo Vinny-nii-chan!")
-				}
-				else {
-					//mensagem.channel.send("Yaharo "+ mensagem.author.username + "-senpai!")
-				}
-				break
-			case "lily":
-				//mensagem.channel.send("Haaaaai!")
-				break
-			case "attack!":
-				//mensagem.channel.send("Raaawwwrr!")
 				break
 		}
 	}
@@ -315,7 +264,7 @@ async function execute(mensagem, serverQueue) {
 			var connection = await voiceChannel.join()
 			queueConstruct.connection = connection
 			play(mensagem.guild, queueConstruct.songs[0])
-			//mensagem.channel.send("*Anime music starts*")
+			mensagem.channel.send("*Drop the Base*")
 		} catch(err) {
 			console.log(err)
 			queue.delete(mensagem.guild.id)
@@ -342,7 +291,7 @@ function stop(mensagem, serverQueue) {
 		return mensagem.channel.send("Você precisa estar em um canal de voz para parar a música!")
 	serverQueue.songs = []
 	serverQueue.connection.dispatcher.end()
-	//mensagem.channel.send("*Anime music stops*")
+	mensagem.channel.send("*Pick up the Base*")
 }
 
 function play(guild, song) {
