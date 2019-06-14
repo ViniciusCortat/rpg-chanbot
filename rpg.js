@@ -195,6 +195,9 @@ client.on('message', (mensagem) => {
 			//mensagem.channel.send("https://www.youtube.com/watch?v=3qRHMhAZNPY")
 			
 		}
+		if(mensagem.content.toLowerCase().includes("rola um rpg")){
+			mensagem.channel.send(GetRandomMember(mensagem));
+		}
 		
 		switch(primaryCommand) {
 			case "itekimasu": 
@@ -256,6 +259,10 @@ client.on('message', (mensagem) => {
 		}
 	}
 })
+
+async function GetRandomMember(mensagem){
+	return mensagem.guild.members.random().displayName;
+}
 
 async function execute(mensagem, serverQueue) {
 	const args = mensagem.content.split(' ')
