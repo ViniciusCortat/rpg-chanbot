@@ -180,6 +180,10 @@ client.on('message', (mensagem) => {
 			mensagem.channel.send("<:thanos:520382259698597899> " + thanosCount)
 			mensagem.react('520382259698597899')
 		}
+		if(mensagem.content.toLowerCase().includes("rola uma cor")){
+			var color = GetRandomColor();
+			mensagem.channel.send("#" + color + " https://www.colorcombos.com/images/colors/" + color + ".png");
+		}
 		if(mensagem.content.toLowerCase().includes("rola um rpg")){
 			mensagem.channel.send(GetRandomMember(mensagem));
 		}
@@ -359,5 +363,8 @@ function GenerateRandomQt(startnum, chanceToIncrease){
 		return startnum;
 }
 
-
-
+function GetRandomColor(){
+	var hexDigits = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+	for(var str = ''; str.length < 6; str = str + hexDigits[Math.floor(Math.random() * hexDigits.length)]);
+	return str;
+}
