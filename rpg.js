@@ -61,7 +61,7 @@ client.on('message', (mensagem) => {
 				else 
 				{
 					var arg = fullCommand.substr(fullCommand.indexOf(" ") + 1);
-					var msg = GetMembersFromRole(arg);
+					var msg = GetMembersFromRole(mensagem, arg);
 					if(msg === "") mensagem.channel.send("Não foram encontrados membros na role " + arg);
 					else mensagem.channel.send(msg);
 				}
@@ -341,9 +341,7 @@ function GetRandomMember(mensagem){
 	return mensagem.guild.members.random().displayName;
 }
 
-function GetMembersFromRole(role){
-	return "OK";
-	/*
+function GetMembersFromRole(mensagem, role){
 	var roleList = mensagem.guild.roles;
 
 	var role = roleList.find(x => x.name === role);
@@ -359,7 +357,6 @@ function GetMembersFromRole(role){
 	}
 
 	return ret;
-	*/
 }
 
 function GetRandomMembers(mensagem, n){
