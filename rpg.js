@@ -342,6 +342,8 @@ function GetRandomMember(mensagem){
 }
 
 function GetMembersFromRole(mensagem, role){
+	return "Ainda não implementado"
+	/*
 	var roleList = mensagem.guild.roles;
 
 	var roleData = roleList.find(x => x.name === role);
@@ -357,6 +359,7 @@ function GetMembersFromRole(mensagem, role){
 	}
 
 	return ret;
+	*/
 }
 
 function GetRandomMembers(mensagem, n){
