@@ -55,11 +55,12 @@ client.on('message', (mensagem) => {
 				mensagem.channel.send("https://rpgriopucgames.slack.com/messages/C0QKLKN5V/details/")
 				break
 			case "role":
-				var arg = fullCommand.substr(fullCommand.indexOf(" ") + 1);
-				if(arg == undefined) {
+				if(splitCommand[1] == undefined) {
 					mensagem.channel.send("De qual role você quer saber os membros?")
 				}
-				else {
+				else 
+				{
+					var arg = fullCommand.substr(fullCommand.indexOf(" ") + 1);
 					var msg = GetMembersFromRole(arg);
 					if(msg === "") mensagem.channel.send("Não foram encontrados membros na role " + arg);
 					else mensagem.channel.send(msg);
