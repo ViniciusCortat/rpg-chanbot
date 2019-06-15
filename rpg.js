@@ -40,7 +40,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "help":
-				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop")
+				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop\n!getRoleMembers\nAlém disso, posso rolar: uma cor, um rpg ou um ship")
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
@@ -53,6 +53,17 @@ client.on('message', (mensagem) => {
 				break
 			case "slack": 
 				mensagem.channel.send("https://rpgriopucgames.slack.com/messages/C0QKLKN5V/details/")
+				break
+			case "getRoleMembers":
+				var arg = fullCommand.substr(fullCommand.indexOf(" ") + 1);
+				if(arg == undefined) {
+					mensagem.channel.send("De qual role você quer saber os membros?")
+				}
+				else {
+					var msg = GetMembersFromRole(arg);
+					if(msg === "") mensagem.channel.send("Não foram encontrados membros na role " + arg);
+					else mensagem.channel.send(msg);
+				}
 				break
 			case "save": 
 				if(splitCommand[1] == undefined) {
@@ -327,6 +338,24 @@ function play(guild, song) {
 
 function GetRandomMember(mensagem){
 	return mensagem.guild.members.random().displayName;
+}
+
+function GetMembersFromRole(role){
+	var roleList = mensagem.guild.roles;
+
+	var role = roleList.find(x => x.name === role);
+	if(role === undefined) return "";
+
+	var memberList = role.members.array();
+	if(memberList.length < 1) return "";
+
+	//Por padrão não botei pra marcar, mas se quiserem alterar isso, basta trocar o memberList[i].id pra <@memberList[i].id>
+	var ret = memberList[0].id;
+	for(var i = 1; i < memberList.length; i++){
+		ret = ret + " " + memberList[i].id;
+	}
+
+	return ret;
 }
 
 function GetRandomMembers(mensagem, n){
