@@ -60,7 +60,7 @@ client.on('message', (mensagem) => {
 				}
 				else 
 				{
-					var arg = fullCommand.substr(fullCommand.indexOf(" ") + 1);
+					var arg = mensagem.content.substr(mensagem.content.indexOf(" ") + 1);
 					var msg = GetMembersFromRole(mensagem, arg);
 					if(msg === "") mensagem.channel.send("Não foram encontrados membros na role " + arg);
 					else mensagem.channel.send(msg);
@@ -346,7 +346,7 @@ function GetMembersFromRole(mensagem, role){
 		var roleList = mensagem.guild.roles;
 
 		var roleData = roleList.find(x => x.name === role);
-		if(roleData === undefined) return "";
+		if(roleData == undefined) return "";
 
 		var memberList = roleData.members.array();
 		if(memberList.length < 1) return "";
