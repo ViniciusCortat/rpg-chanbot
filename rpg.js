@@ -40,12 +40,12 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "help":
-				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop\n!role\nAlém disso, posso rolar: uma cor, um rpg ou um ship")
+				mensagem.channel.send("!driveproj\n!driveadm\n!trello\n!slack\n!save\n!pauta\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop\n!role\nAlém disso, posso rolar: uma cor, um rpg ou um ship")
 				break
-			case "driveProj": 
+			case "driveproj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
 				break
-			case "driveAdm": 
+			case "driveadm": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0BxD_EjlgXY3DMlRCb1VKRXdVZUE")
 				break
 			case "trello": 
