@@ -40,7 +40,7 @@ client.on('message', (mensagem) => {
 		
 		switch(primaryCommand) {
 			case "help":
-				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop\n!getRoleMembers\nAlém disso, posso rolar: uma cor, um rpg ou um ship")
+				mensagem.channel.send("!driveProj\n!driveAdm\n!trello\n!slack\n!save\n!pauta\n!game\n!try\n!hangyman\n!letter\n!play\n!skip\n!stop\n!role\nAlém disso, posso rolar: uma cor, um rpg ou um ship")
 				break
 			case "driveProj": 
 				mensagem.channel.send("https://drive.google.com/drive/folders/0B0sTPCw3EupvVzllaEkyZDdYWWc")
@@ -54,7 +54,7 @@ client.on('message', (mensagem) => {
 			case "slack": 
 				mensagem.channel.send("https://rpgriopucgames.slack.com/messages/C0QKLKN5V/details/")
 				break
-			case "getRoleMembers":
+			case "role":
 				var arg = fullCommand.substr(fullCommand.indexOf(" ") + 1);
 				if(arg == undefined) {
 					mensagem.channel.send("De qual role você quer saber os membros?")
