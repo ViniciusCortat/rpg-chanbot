@@ -342,8 +342,6 @@ function GetRandomMember(mensagem){
 }
 
 function GetMembersFromRole(role){
-	return "";
-	/*
 	var roleList = mensagem.guild.roles;
 
 	var role = roleList.find(x => x.name === role);
@@ -352,6 +350,9 @@ function GetMembersFromRole(role){
 	var memberList = role.members.array();
 	if(memberList.length < 1) return "";
 
+	
+	return "A role " + role + " tem membros";
+	/*
 	//Por padrão não botei pra marcar, mas se quiserem alterar isso, basta trocar o memberList[i].id pra <@memberList[i].id>
 	var ret = memberList[0].id;
 	for(var i = 1; i < memberList.length; i++){
