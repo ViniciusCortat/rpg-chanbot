@@ -351,9 +351,9 @@ function GetMembersFromRole(mensagem, role){
 	if(memberList.length < 1) return "";
 
 	//Por padrão não botei pra marcar, mas se quiserem alterar isso, basta trocar o memberList[i].displayName pra <@memberList[i].id>
-	var ret = memberList[0].id;
+	var ret = memberList[0].displayName;
 	for(var i = 1; i < memberList.length; i++){
-		ret = ret + " " + memberList[i].displayName;
+		ret = ret + "\n" + memberList[i].displayName;
 	}
 
 	return ret;
