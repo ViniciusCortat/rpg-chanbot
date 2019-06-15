@@ -342,10 +342,10 @@ function GetRandomMember(mensagem){
 }
 
 function GetMembersFromRole(role){
-	var roleList = mensagem.guild.roles;
-	
 	return "OK";
 	/*
+	var roleList = mensagem.guild.roles;
+
 	var role = roleList.find(x => x.name === role);
 	if(role === undefined) return "";
 
