@@ -342,26 +342,21 @@ function GetRandomMember(mensagem){
 }
 
 function GetMembersFromRole(mensagem, role){
-	try{
-		var roleList = mensagem.guild.roles;
+	var roleList = mensagem.guild.roles;
 
-		var roleData = roleList.find(x => x.name === role);
-		if(roleData == undefined) return "";
+	var roleData = roleList.find(x => x.name === role);
+	if(roleData == undefined) return "";
 
-		var memberList = roleData.members.array();
-		if(memberList.length < 1) return "";
+	var memberList = roleData.members.array();
+	if(memberList.length < 1) return "";
 
-		//Por padrão não botei pra marcar, mas se quiserem alterar isso, basta trocar o memberList[i].id pra <@memberList[i].id>
-		var ret = memberList[0].id;
-		for(var i = 1; i < memberList.length; i++){
-			ret = ret + " " + memberList[i].id;
-		}
-
-		return ret;
+	//Por padrão não botei pra marcar, mas se quiserem alterar isso, basta trocar o memberList[i].displayName pra <@memberList[i].id>
+	var ret = memberList[0].id;
+	for(var i = 1; i < memberList.length; i++){
+		ret = ret + " " + memberList[i].displayName;
 	}
-	catch (e) {
-		mensagem.channel.send(e.name + ": " + e.message);
-	}
+
+	return ret;
 }
 
 function GetRandomMembers(mensagem, n){
