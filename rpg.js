@@ -248,9 +248,6 @@ client.on('message', (mensagem) => {
 				if(mensagem.member.voiceChannel)
 					execute(mensagem,serverQueue)
 				break
-			case "morreu?":
-				mensagem.channel.send("Morri não")
-				break
 		}
 	}
 })
